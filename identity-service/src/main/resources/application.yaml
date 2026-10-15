@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: identity-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservice_ss12_identity_db
+    username: tuandung
+    password: TuanDung@1207
+server:
+  port: 8080

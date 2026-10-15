@@ -1,0 +1,25 @@
+package com.exam.identityservice.controller;
+
+import com.exam.identityservice.dto.request.RegisterUserRequest;
+import com.exam.identityservice.dto.response.AuthRegisterResponse;
+import com.exam.identityservice.service.AuthService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthService authService;
+
+   @PostMapping("register")
+   public ResponseEntity<AuthRegisterResponse> registerUser(
+           @RequestBody RegisterUserRequest request
+           ){
+       return ResponseEntity.status(HttpStatus.CREATED)
+               .body(authService.register(request));
+   }
+}

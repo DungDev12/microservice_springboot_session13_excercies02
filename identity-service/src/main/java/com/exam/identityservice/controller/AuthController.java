@@ -22,4 +22,12 @@ public class AuthController {
        return ResponseEntity.status(HttpStatus.CREATED)
                .body(authService.register(request));
    }
+
+   @GetMapping("test-token")
+    public ResponseEntity<String> testToken(
+            @RequestParam String username
+   ){
+       return  ResponseEntity.status(HttpStatus.OK)
+               .body(authService.testToken(username));
+   }
 }

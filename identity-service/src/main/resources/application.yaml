@@ -9,5 +9,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/microservice_ss12_identity_db
     username: tuandung
     password: TuanDung@1207
+
 server:
   port: 8080
+
+jwt:
+  secret: w3gc8vtfftkr1enq2ul78k0215wpx2i6skbeuhcrwlc0qff8aeca7w22ne30m91p
+  expiration: 3600000
